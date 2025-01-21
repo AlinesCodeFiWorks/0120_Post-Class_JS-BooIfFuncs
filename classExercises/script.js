@@ -1,9 +1,17 @@
 // 1. Truthy and falsy check
-console.log(Boolean(0)); //falsy
-console.log(Boolean("")); //falsy
-console.log(Boolean("Hello")); //truthy
-console.log(Boolean(42)); //truthy
-console.log(Boolean(null)); //falsy
+function checkTruthyFalsy(value) {
+  if (Boolean(value) === true) {
+    console.log("Truthy");
+  } else {
+    console.log("Falsy");
+  }
+}
+
+checkTruthyFalsy(0); //falsy
+checkTruthyFalsy(""); //falsy
+checkTruthyFalsy("Hello"); //truthy
+checkTruthyFalsy(42); //truthy
+checkTruthyFalsy(null); //falsy
 
 // 2. Age eligibility
 let age = 27;
@@ -102,7 +110,10 @@ function calculateFinalPrice(price, discountRate = 0.15, taxRate = 0.08) {
   const tax = discountedPrice * taxRate;
   const finalPrice = discountedPrice + tax;
   console.log(
-    `Original price: $${price} /n Discount: $${discount} /n Tax: $${tax} /n Final Price: $${finalPrice}`
+    `Original price: $${price.toFixed(2)} /n
+    Discount: $${discount.toFixed(2)} /n
+    Tax: $${tax.toFixed(2)} /n
+    Final Price: $${finalPrice.toFixed(2)}`
   );
 }
 
